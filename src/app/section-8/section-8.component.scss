@@ -1,0 +1,84 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 105px 32px 110px;
+    background-color: var(--primary-color);
+
+    .content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .title {
+            font-size: 40px;
+            margin-bottom: 32px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 523px;
+            height: 518px;
+            margin-bottom: 16px;
+            background-image: url('/assets/img/selo-card.png');
+
+            .card {
+                padding: 32px 20px 34px 21px;
+                width: 319px;
+                height: 450px;
+                background-color: var(--secundary-color);
+                border: solid 2px #66B285;
+                border-radius: 18px;
+
+                .card-title {
+                    color: #263238;
+                    font-weight: 500;
+                    line-height: 32px;
+                    margin-bottom: 47px;
+                    text-align: center;
+                    width: 100%;
+                    display: block;
+                }
+
+                .p-color {
+                    font-weight: 700;
+                }
+
+                .payment {
+                    margin-bottom: 49px;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+
+                    .payment-description {
+                        font-size: 16px;
+                        margin-bottom: 14px;
+                    }
+
+                    .payment-value {
+                        font-size: 36px;
+                        line-height: 36px;
+                    }
+
+                    .payment-text {
+                        margin-top: 10px;
+                        line-height: 20px;
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: #4B5563;
+                    }
+                }
+
+                .p-button {
+                    margin-top: 16px;
+                    width: 100%;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                }
+            }
+        }
+    }
+    
+}
