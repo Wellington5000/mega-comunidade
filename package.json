@@ -6,8 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:mega-comunidade": "node dist/mega-comunidade/server/server.mjs"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -18,7 +17,6 @@
     "@angular/forms": "^17.0.0",
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
-    "@angular/platform-server": "^17.0.0",
     "@angular/router": "^17.0.0",
     "@angular/ssr": "^17.0.7",
     "express": "^4.18.2",
