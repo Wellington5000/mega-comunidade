@@ -1,0 +1,61 @@
+.container {
+    gap: 60px;
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .content {
+        gap: 30px;
+        display: flex;
+        align-items: center;
+
+        .content-1 {
+            width: 660px;
+            height: 580px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('/assets/img/trevo-light.png');
+            background-size: cover;
+            background-position: center;
+
+            .phone-image {
+                margin-left: -30px;
+            }
+        }
+        
+        .content-2 {
+            .title {
+                font-size: 38px;
+                margin-bottom: 24px;
+            }
+
+            .s-text {
+                font-size: 18px;
+                font-weight: 400;
+            }
+
+            ul {
+                margin-left: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                max-width: 504px;
+                
+                li {
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+            }
+
+            .info-2 {
+                max-width: 504px;
+            }
+
+            .p-color {
+                font-weight: 700;
+            }
+        }
+    }
+}

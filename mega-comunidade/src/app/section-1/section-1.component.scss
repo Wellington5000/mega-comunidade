@@ -1,0 +1,40 @@
+.container {
+    padding: 80px 32px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    .content-1 {
+        display: flex;
+        flex-direction: column;
+
+        .logo {
+            margin-bottom: 42px;
+        }
+
+        .title {
+            max-width: 594px;
+            margin-bottom: 32px;
+        }
+
+        .text {
+            max-width: 563px;
+            margin-bottom: 34px;
+        }
+
+        .p-button {
+            padding: 21px 57px;
+        }
+    }
+
+    .content-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 575px;
+        height: 622px;
+        background: url('/assets/img/bg-video.jpeg');
+        background-position: center;
+    }
+}
