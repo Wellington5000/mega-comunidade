@@ -1,0 +1,53 @@
+.container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+
+    .content {
+        width: 100%;
+        max-width: 1153px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 93px 0 120px;
+
+        .content-1 {
+            gap: 16px;
+            display: flex;
+            align-items: center;
+
+            .count-text {
+                font-weight: 700;
+                color: #FFFFFF;
+                font-size: 24px;
+                line-height: 24px;
+            }
+
+            .countdown {
+                width: 167px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(to left, #FFFFFF33, #FFFFFF00, #FFFFFF33);
+
+                .count-time {
+                    font-weight: 700;
+                    font-size: 32px;
+                    color: #FFFFFF;
+                }
+            }
+        }
+
+        .content-2 {
+            .p-button {
+                padding: 14px 72px;
+            }
+        }
+    }
+}
