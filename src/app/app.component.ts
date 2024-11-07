@@ -12,6 +12,7 @@ import { Section7Component } from "./section-7/section-7.component";
 import { Section8Component } from "./section-8/section-8.component";
 import { Section9Component } from "./section-9/section-9.component";
 import { FooterComponent } from "./footer/footer.component";
+import { CountdownComponent } from "./countdown/countdown.component";
 
 @Component({
   selector: 'app-root',
@@ -29,7 +30,8 @@ import { FooterComponent } from "./footer/footer.component";
     Section7Component,
     Section8Component,
     Section9Component,
-    FooterComponent
+    FooterComponent,
+    CountdownComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

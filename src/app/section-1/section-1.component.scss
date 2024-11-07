@@ -32,12 +32,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 548px;
-        height: 558px;
-        background: radial-gradient(
-            95.71% 74.71% at 50% 50%,
-            rgba(68, 171, 28, 0.5019607843) 30%,
-            #000 70%);
-
+        width: 575px;
+        height: 622px;
+        background: url('/assets/img/bg-video.jpeg');
+        background-position: center;
     }
 }
