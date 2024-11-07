@@ -18,7 +18,7 @@
         justify-content: center;
         background: radial-gradient(
             68.71% 69.71% at 50% 50%,
-            rgba(68, 171, 28, 0.5019607843) 30%,
+            #40AD1C4D 30%,
             #000 79%);
 
             .p-selo {
@@ -34,34 +34,37 @@
             }
     }
 
-    
 
     .content-2 {
-        margin-top: 50px;
         display: flex;
-        gap: 20px;
         align-items: center;
-
+        position: relative;
+        gap: 8px;
+        margin-top: 50px;
+    
         .arrow {
+            top: 50%;
             padding: 6px;
             cursor: pointer;
+            z-index: 10;
         }
-
+    
         .cards {
-            gap: 40px;
             width: 100%;
             max-width: 1073px;
-            display: flex;
-            justify-content: center;
             overflow: hidden;
-            flex-wrap: wrap;
-
-            .card {
-                min-width: 331px;
-                height: 285px;
-                border-radius: 4px;
-                background-color: var(--secundary-color);
-            }
+            position: relative;
+        }
+    
+        .card-content {
+            display: flex;
+            gap: 16px;
+            transition: transform 0.5s ease;
+            will-change: transform;
         }
     }
+    
+    
+    
+    
 }

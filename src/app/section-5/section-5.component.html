@@ -10,14 +10,28 @@
     </div>
 
     <div class="content-2">
-        <app-image class="arrow" img="arrow-back" width="8px" height="14px"></app-image>
+        <app-image class="arrow" img="arrow-back" width="8px" height="14px" (click)="scrollLeft()"></app-image>
         <div class="cards">
-            <div class="card"></div>
-
-            <div class="card"></div>
-
-            <div class="card"></div>
+            <div class="card-content"  #carousel>
+                <div class="card-image">
+                    <app-image img="depoimento-1" width="347px" height="165px"></app-image>
+                </div>
+                <div class="card-image">
+                    <app-image img="depoimento-2" width="347px" height="165px"></app-image>
+                </div>
+                <div class="card-image">
+                    <app-image img="depoimento-3" width="347px" height="165px"></app-image>
+                </div>
+                <div class="card-image">
+                    <app-image img="depoimento-4" width="347px" height="165px"></app-image>
+                </div>
+                <div class="card-image">
+                    <app-image img="depoimento-5" width="347px" height="165px"></app-image>
+                </div>
+            </div>
         </div>
-        <app-image class="arrow" img="arrow-foward" width="8px" height="14px"></app-image>
+        <app-image class="arrow" img="arrow-foward" width="8px" height="14px" (click)="scrollRight()"></app-image>
     </div>
+    
+    
 </div>
