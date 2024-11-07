@@ -16,17 +16,22 @@
         gap: 24px;
 
         .content-1 {
-            margin-top: -104px;
-            width: fit-content;
+            width: 100%;
+            max-width: 516px;
+            margin-top: -98px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
 
+            app-image {
+              height: 451px;
+            }
+
             .author-name {
                 width: 100%;
                 text-align: center;
-                padding: 9px 55px 8px 75px;
+                padding: 9px 0 8px;
                 background-color: #090909;
                 border-top-right-radius: 12px;
 
@@ -37,12 +42,13 @@
         }
 
         .content-2 {
+            width: 100%;
             gap: 24px;
             display: flex;
             flex-direction: column;
-            max-width: 544px;
 
             span {
+              max-width: 544px;
                 font-weight: 500;
                 line-height: 30px;
 
