@@ -1,30 +1,37 @@
 <div class="container">
     <div class="content">
-        <h1 class="title s-color">Adquira agora o Plano PRO</h1>
+        <h1 class="title s-color">Adquira agora o <span class="p-color">Plano PRO anual</span></h1>
 
         <div class="card-container">
+            <app-image class="selo selo-1" img="m-selo" width="150px" height="153px"></app-image>
             <div class="card">
-                <span class="text card-title">Escolha a melhor forma de pagamento pra você</span>
-
-                <div class="payment">
-                    <span class="payment-description p-color">À vista</span>
-                    <span class="payment-value p-color">R$180</span>
+                <app-image img="pix" width="164px" height="164px"></app-image>
+                <div class="value-info">
+                    <span class="old-value">R$240</span>
+                    <span class="value">R$180</span>
+                    <span class="discount">(25% de desconto no pix)</span>
                 </div>
-
-                <div class="payment">
-                    <span class="payment-description p-color">No cartão de crédito</span>
-                    <span class="payment-value p-color">R$240</span>
-                    <span class="payment-text">R$ 20 por mês</span>
-                </div>
-
-                <a href="https://mega-sem-segredo.vercel.app/#/checkout">
-                    <button class="p-button">Assinar agora!</button>
+                <a href="https://clkdmg.site/pay/plano-mega-pix">
+                    <button class="p-button">Pagar no Pix</button>
                 </a>
-                
             </div>
-        </div>
 
-        <app-image img="safe" width="fit-content" height="fit-content"></app-image>
+            <div class="card">
+                <app-image img="credit-card" width="153px" height="125px"></app-image>
+                <div class="value-info">
+                    <span class="parcel-value">Em 12x de</span>
+                    <div class="parcel-value-content">
+                        <span class="value">R$20</span>
+                        <span class="parcel-info">(Sem juros)</span>
+                    </div>
+                    <span class="discount">Total de  R$ 240</span>
+                </div>
+                <a href=" https://clkdmg.site/pay/plano-mega-cartao">
+                    <button class="p-button">Pagar no cartão</button>
+                </a>
+            </div>
+            <app-image class="selo selo-2" img="m-selo" width="150px" height="153px"></app-image>
+        </div>
     </div>
 </div>
 
