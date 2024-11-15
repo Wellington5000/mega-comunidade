@@ -64,3 +64,26 @@
         }
     }
 }
+
+@media(max-width: 1040px) {
+    .container {
+        padding: 0 24px;
+    }
+
+    .title {
+        margin-top: 40px;
+        margin-bottom: 0 !important;
+    }
+
+    .content-1 {
+        width: 100% !important;
+    }
+
+    .content-2 {
+        margin-top: 10px !important;
+    }
+
+    .card-image {
+        min-width: 100%;
+    }
+}

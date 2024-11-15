@@ -64,3 +64,40 @@
     margin-top: 32px;
     padding: 20px 57px;
   }
+
+  @media(max-width: 1040px) {
+    .content-3 {
+      padding: 0 24px 50px;
+      flex-direction: column;
+
+      .hc3-info {
+        margin-top: 50px;
+      }
+
+      .hc3-title {
+        line-height: 26px !important;
+        font-size: 22px !important;
+      }
+
+      .hc3-text {
+        line-height: auto !important;
+        font-size: 16px !important;
+      }
+
+      .t1 {
+        margin-bottom: 22px !important;
+      }
+
+      .hc3-img {
+        justify-content: center;
+
+        img {
+          max-width: 80%;
+        }
+      }
+
+      .p-button {
+        width: 100%;
+      }
+    }
+  }

@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 0 24px;
 
     .content {
         width: 100%;
@@ -62,6 +63,31 @@
             position: absolute;
             margin-top: 397px;
             margin-left: 1100px;
+        }
+    }
+}
+
+@media(max-width: 1040px) {
+    .title {
+        font-size: 22px;
+        align-self: flex-start;
+    }
+
+    .content {
+        flex-direction: column;
+        height: auto !important;
+        margin-top: 40px !important;
+
+        .content-1 {
+            margin-top: 0 !important;
+        }
+    }
+
+    :host ::ng-deep .author-image {
+        height: auto !important;
+
+        img {
+            width: 80% !important;
         }
     }
 }

@@ -21,3 +21,31 @@
         background-color: #208100;
     }
 }
+
+@media(max-width: 1040px) {
+    .container {
+        margin-top: 80px;
+    }
+
+    .content-1 {
+        justify-content: space-between;
+        gap: 10px !important;
+    }
+
+    :host ::ng-deep app-image img {
+        width: 40px !important;
+        max-width: fit-content !important;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .image-1 {
+        margin-left: 24px;
+    }
+
+    .image-2 {
+        margin-right: 24px;
+    }
+}

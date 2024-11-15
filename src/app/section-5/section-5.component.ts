@@ -1,17 +1,28 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { ImageComponent } from "../components/image/image.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-section-5',
   standalone: true,
-  imports: [ImageComponent],
+  imports: [
+    CommonModule,
+    ImageComponent
+  ],
   templateUrl: './section-5.component.html',
-  styleUrl: './section-5.component.scss'
+  styleUrls: ['./section-5.component.scss']
 })
 export class Section5Component {
   @ViewChild('carousel', { static: true }) carousel!: ElementRef;
   private scrollPosition = 0;
   private cardWidth = 742;
+  screenWidth: number;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.updateScreenSize();
+    this.screenWidth = this.isBrowser() ? window.innerWidth : 0;
+  }
 
   scrollLeft(): void {
     this.scrollPosition = Math.max(this.scrollPosition - this.cardWidth, 0);
@@ -25,6 +36,29 @@ export class Section5Component {
   }
 
   updateScroll(): void {
-    this.carousel.nativeElement.style.transform = `translateX(-${this.scrollPosition}px)`;
+    if (this.isBrowser()) {
+      this.carousel.nativeElement.style.transform = `translateX(-${this.scrollPosition}px)`;
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.updateScreenSize();
+  }
+
+  updateScreenSize(): void {
+    if (this.isBrowser()) {
+      this.screenWidth = window.innerWidth;
+
+      if (this.screenWidth <= 1040) {
+        this.cardWidth = 305;
+      } else {
+        this.cardWidth = 742
+      }
+    }
+  }
+
+  private isBrowser(): boolean {
+    return isPlatformBrowser(this.platformId);
   }
 }

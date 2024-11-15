@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 105px 32px 110px;
+    padding: 105px 24px 110px;
     background-color: #161C24;
 
     .content {
@@ -128,4 +128,17 @@
         }
     }
     
+}
+
+@media(max-width: 1040px) {
+    .container {
+        padding-top: 70px !important;
+    }
+
+    .card-container {
+        margin-top: 80px;
+        gap: 130px !important;
+        height: auto !important;
+        flex-direction: column;
+    }
 }

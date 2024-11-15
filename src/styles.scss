@@ -59,3 +59,38 @@ button:hover {
   background-color: #196500;
   transform: scale(1.1);
 }
+
+.hide-desktop {
+    display: none !important;
+}
+
+@media(max-width: 1040px) {
+    .hide-desktop {
+        display: flex !important;
+    }
+
+    .hide-mobile {
+        display: none !important;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        line-height: 26px !important;
+        font-size: 22px !important;
+    }
+
+    .m-text {
+        font-size: 20px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    .p-button {
+        line-height: 18px;
+    }
+}

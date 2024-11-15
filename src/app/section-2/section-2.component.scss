@@ -1,7 +1,7 @@
 .container {
     gap: 94px;
     display: flex;
-    padding: 93px 32px;
+    padding: 93px 24px;
     align-items: center;
     justify-content: center;
 
@@ -51,5 +51,13 @@
         .p-button {
             padding: 20px 77px;
         }
+    }
+}
+
+@media(max-width: 1040px) {
+    .container {
+        flex-direction: column;
+
+        
     }
 }
