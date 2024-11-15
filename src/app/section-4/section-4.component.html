@@ -2,7 +2,7 @@
     <div class="content-1">
         <app-image (click)="previus()" class="arrow" img="arrow-back" width="8px" height="14px"></app-image>
         <div class="slider-content">
-            <img [src]="'/assets/img/' + getImage() + '.png'" alt="">
+            <img [@fadeInOut] [src]="'/assets/img/' + getImage() + '.png'" alt="">
         </div>
         <app-image (click)="next()" class="arrow" img="arrow-foward" width="8px" height="14px"></app-image>
     </div>
@@ -17,7 +17,7 @@
             <li class="text s-color">Dupla Sena duas vezes a Quina e dezenas de quadras…</li>
         </ul>
 
-       <a href="https://mega-sem-segredo.vercel.app/#/checkout">
+       <a href="#payment">
             <button class="p-button">Assine o plano Pro agora mesmo!</button>
        </a>
     </div>

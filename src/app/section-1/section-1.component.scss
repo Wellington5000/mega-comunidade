@@ -34,6 +34,8 @@
     }
 
     .content-video {
+      gap: 15px;
+      flex-direction: column;
       position: absolute;
       width: 660px;
       height: 660px;
@@ -46,4 +48,37 @@
       margin-top: 64px;
       background-size: 770px 715px;
     }
+
+    .active-sound-container {
+      gap: 8px;
+      display: flex;
+      align-items: center;
+      height: 30px;
+      animation: pulse 2s infinite;
+
+    }
+
+    .active-sound {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    img {
+    }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
