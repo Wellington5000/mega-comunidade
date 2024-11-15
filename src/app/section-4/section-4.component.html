@@ -1,21 +1,25 @@
 <div class="container">
     <div class="content-1 hide-mobile">
-        <app-image (click)="previus()" class="arrow" img="arrow-back" width="8px" height="14px"></app-image>
+        <app-image (click)="scrollLeft()" class="arrow" img="arrow-back" width="8px" height="14px"></app-image>
         <div class="slider-content">
-            <img [@fadeInOut] [src]="'/assets/img/' + getImage() + '.png'" alt="">
+            <div class="sliders"  #carousel>
+                <img *ngFor="let receipt of receipts" [src]="'/assets/img/' + receipt?.name + '.png'"/>
+            </div>
         </div>
-        <app-image (click)="next()" class="arrow" img="arrow-foward" width="8px" height="14px"></app-image>
+        <app-image (click)="scrollRight()" class="arrow" img="arrow-foward" width="8px" height="14px"></app-image>
     </div>
 
     <div class="content-2">
         <h2 class="subtitle s-color">Estes são alguns dos <span class="p-color">comprovantes que obtive com meus métodos:</span></h2>
 
         <div class="content-1 hide-desktop">
-            <app-image (click)="previus()" class="arrow" img="arrow-back" width="8px" height="14px"></app-image>
+            <app-image (click)="scrollLeft()" class="arrow" img="arrow-back" width="8px" height="14px"></app-image>
             <div class="slider-content">
-                <img [@fadeInOut] [src]="'/assets/img/' + getImage() + '.png'" alt="">
+                <div class="sliders"  #carousel2>
+                    <img *ngFor="let receipt of receipts" [src]="'/assets/img/' + receipt?.name + '.png'"/>
+                </div>
             </div>
-            <app-image (click)="next()" class="arrow" img="arrow-foward" width="8px" height="14px"></app-image>
+            <app-image (click)="scrollRight()" class="arrow" img="arrow-foward" width="8px" height="14px"></app-image>
         </div>
 
         <ul>

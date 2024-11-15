@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { ImageComponent } from "../components/image/image.component";
 import { trigger, transition, style, animate } from '@angular/animations';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
@@ -9,22 +9,31 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   standalone: true,
   imports: [
     CommonModule,
-    ImageComponent
+    ImageComponent,
   ],
   templateUrl: './section-4.component.html',
   styleUrl: './section-4.component.scss',
   animations: [
     trigger('fadeInOut', [
-      transition(':enter', [
-        style({ right: '300px', position: 'relative' }),
-        animate(300, style({ right: '0' })),
+      transition(':enter', [ // Quando a imagem entra
+        style({ opacity: 0, transform: 'translateX(100%)' }),
+        animate('500ms ease-in', style({ opacity: 1, transform: 'translateX(0)' })),
       ]),
-      transition(':leave', [animate(300, style({ marginLeft: '300px', display: 'none' }))]),
-    ]),
+      transition(':leave', [ // Quando a imagem sai
+        animate('500ms ease-out', style({ opacity: 0, transform: 'translateX(-100%)' }))
+      ]),
+    ])
   ]
 })
 export class Section4Component {
   index: number = 0;
+  isMobile: boolean = false;
+
+  @ViewChild('carousel', { static: true }) carousel!: ElementRef;
+  @ViewChild('carousel2', { static: true }) carousel2!: ElementRef;
+  private scrollPosition = 0;
+  private cardWidth = 400;
+  screenWidth: number;
 
   receipts = [
     { index: 0, name: 'comprovante-2' },
@@ -33,6 +42,11 @@ export class Section4Component {
     { index: 3, name: 'comprovante-5' },
     { index: 4, name: 'comprovante-6' },
   ];
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.updateScreenSize();
+    this.screenWidth = this.isBrowser() ? window.innerWidth : 0;
+  }
 
   next(): void {
     if(this.index === this.receipts.length - 1) {
@@ -53,5 +67,47 @@ export class Section4Component {
   getImage(): string {
     const receipt = this.receipts.find((receipt) => receipt.index === this.index);
     return receipt?.name || '';
+  }
+
+  scrollLeft(): void {
+    this.scrollPosition = Math.max(this.scrollPosition - this.cardWidth, 0);
+    this.updateScroll();
+  }
+
+  scrollRight(): void {
+    const carousel = this.isMobile ? this.carousel2 : this.carousel;
+    const maxScroll = carousel.nativeElement.scrollWidth - carousel.nativeElement.clientWidth;
+    this.scrollPosition = Math.min(this.scrollPosition + this.cardWidth, maxScroll);
+    this.updateScroll();
+  }
+
+  updateScroll(): void {
+    if (this.isBrowser()) {
+      const carousel = this.isMobile ? this.carousel2 : this.carousel;
+      carousel.nativeElement.style.transform = `translateX(-${this.scrollPosition}px)`;
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.updateScreenSize();
+  }
+
+  updateScreenSize(): void {
+    if (this.isBrowser()) {
+      this.screenWidth = window.innerWidth;
+
+      if (this.screenWidth <= 1040) {
+        this.isMobile = true;
+        this.cardWidth = 285;
+      } else {
+        this.isMobile = false;
+        this.cardWidth = 557;
+      }
+    }
+  }
+
+  private isBrowser(): boolean {
+    return isPlatformBrowser(this.platformId);
   }
 }
