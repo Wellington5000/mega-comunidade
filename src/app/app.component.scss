@@ -1,0 +1,13 @@
+.whatsapp {
+    position: fixed;
+    bottom: 0;
+    right: 46px;
+    z-index: 1;
+}
+
+@media(max-width: 1040px) {
+    .whatsapp {
+        right: 25px;
+        bottom: 13px;
+    }
+}

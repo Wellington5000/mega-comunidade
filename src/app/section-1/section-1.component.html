@@ -4,22 +4,14 @@
         <h1 class="title p-color">Você sabia que pode aumentar suas chances de ganhar na Mega-Sena, investindo menos de R$ 1 por dia?</h1>
         <p class="text s-color">Em apenas 5 minutos vou te mostrar como mudar sua forma de jogar com o método Mega Sem Segredo.</p>
 
-        <div class="active-sound-container hide-desktop">
+        <div class="active-sound-container hide-desktop" [class.hide]="!wasMuted2">
           <span class="active-sound s-color">Ative o som</span>
           <img src="/assets/img/sound.png" alt="">
         </div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/IB9rPkdacm4?si=TZJds4QWK7ArGY9z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe
-          class="mobile-video hide-desktop"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/IB9rPkdacm4?si=TZJds4QWK7ArGY9z&autoplay=1&mute=1"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+
+        <div class="hide-desktop player-mobile">
+          <div id="player-2"></div>
+        </div>
 
         <a class="subscription-button" href="#plans">
             <button class="p-button">Assinar plano PRO</button>
@@ -28,20 +20,13 @@
     <div class="content-2 hide-mobile">
     </div>
     <div class="content-video hide-mobile">
-      <div class="active-sound-container">
+      <div class="active-sound-container" [class.hide]="!wasMuted">
         <span class="active-sound s-color">Ative o som</span>
         <img src="/assets/img/sound.png" alt="">
       </div>
 
-      <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/-3g5E6HCgKQ?si=TUW0Y0cW54Z7czSo&autoplay=1&mute=1"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-      ></iframe>
+      <div class="player-desktop">
+        <div id="player-1"></div>
+      </div>
     </div>
 </div>

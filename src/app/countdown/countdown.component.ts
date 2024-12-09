@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID, signal } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID, signal } from '@angular/core';
 
 @Component({
   selector: 'app-countdown',
@@ -8,9 +8,10 @@ import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID, signal } from '@angu
   styleUrls: ['./countdown.component.scss']
 })
 export class CountdownComponent implements OnInit {
-  countdownTime = 15 * 60; // 15 minutos em segundos
-  minutes: string = '15';
-  hours: number = 0;
+  targetDate = new Date('2024-12-28T23:59:59');
+  days: string = '00';
+  hours: string = '00';
+  minutes: string = '00';
   seconds: string = '00';
   isBrowser = signal(false);
 
@@ -21,28 +22,34 @@ export class CountdownComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.isBrowser()) {
+    if (this.isBrowser()) {
       this.startCountdown();
     }
   }
 
   startCountdown(): void {
-    setTimeout(() => {
-      if (this.countdownTime > 0) {
-        this.countdownTime--;
-        this.updateTimeDisplay();
-        this.startCountdown();
-      } else {
-        console.log('Countdown finalizado');
-      }
+    setInterval(() => {
+      this.updateTimeDisplay();
     }, 1000);
   }
 
   updateTimeDisplay(): void {
-    const mins = Math.floor(this.countdownTime / 60);
-    const secs = this.countdownTime % 60;
+    const now = new Date();
+    const timeDifference = this.targetDate.getTime() - now.getTime();
 
-    this.minutes = mins.toString().padStart(2, '0');
-    this.seconds = secs.toString().padStart(2, '0');
+    if (timeDifference > 0) {
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+      this.days = days.toString().padStart(2, '0');
+      this.hours = hours.toString().padStart(2, '0');
+      this.minutes = minutes.toString().padStart(2, '0');
+      this.seconds = seconds.toString().padStart(2, '0');
+    } else {
+      this.days = this.hours = this.minutes = this.seconds = '00';
+      console.log('Countdown finalizado');
+    }
   }
 }
