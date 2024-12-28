@@ -18,7 +18,7 @@ export class Section1Component {
   wasMuted = true;
   wasMuted2 = true;
   checkMuteInterval: any;
-  checkMuteInterval2: any; 
+  checkMuteInterval2: any;
   players: string[] = ['player-2', 'player-1'];
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
@@ -47,7 +47,7 @@ export class Section1Component {
     this.player = new YT.Player(playerName, {
       height: '100%',
       width: '100%',
-      videoId: '_34dvcrRj78',
+      videoId: 'gNXHa69Ppqo',
       playerVars: {
         autoplay: 1,
         mute: 1,
@@ -63,7 +63,7 @@ export class Section1Component {
     this.player2 = new YT.Player('player-2', {
       height: '100%',
       width: '100%',
-      videoId: '_34dvcrRj78',
+      videoId: 'gNXHa69Ppqo',
       playerVars: {
         autoplay: 1,
         mute: 1,
@@ -127,5 +127,5 @@ export class Section1Component {
   ngOnDestroy() {
     this.clearInterval();
   }
-  
+
 }
