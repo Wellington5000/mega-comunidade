@@ -33,6 +33,10 @@
             .phone-image {
                 margin-left: 52px;
             }
+
+            .phone-lottries {
+                margin-left: 100px;
+            }
         }
 
         .content-2 {
@@ -94,5 +98,7 @@
         }
     }
 
-    
+    .phone-image {
+        justify-content: center;
+    }    
 }
