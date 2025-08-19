@@ -8,7 +8,6 @@ export class Utils {
     const url = window.URL.createObjectURL(blob);
 
     if (Utils.isMobileDevice()) {
-      // Força o download em dispositivos móveis
       const a = document.createElement('a');
       a.href = url;
       a.download = `${fileName}.pdf`;
@@ -16,7 +15,6 @@ export class Utils {
       a.click();
       document.body.removeChild(a);
     } else {
-      // Abre em uma nova aba para desktop
       const a = document.createElement('a');
       a.href = url;
       a.target = '_blank';
