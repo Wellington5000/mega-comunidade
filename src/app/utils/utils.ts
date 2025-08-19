@@ -1,16 +1,19 @@
-
 export class Utils {
-  static openPdf(data: Blob): void {
+  static downloadPdf(data: Blob, fileName: string): void {
     const blob = new Blob([data], { type: 'application/pdf' });
-    const url = URL.createObjectURL(blob);
+    const url = window.URL.createObjectURL(blob);
 
-    const pdfWindow = window.open();
-    if (pdfWindow) {
-      pdfWindow.location.href = url;
-    }
+    const a = document.createElement('a');
+    a.href = url;
+    a.target = '_blank'; // Força a abertura em uma nova aba
+    // a.download = `${fileName}.pdf`; // Opcional, pode ser removido se não quiser baixar em alguns navegadores
+
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
 
     setTimeout(() => {
-      URL.revokeObjectURL(url);
-    }, 5000);
+      window.URL.revokeObjectURL(url);
+    }, 1000);
   }
 }
