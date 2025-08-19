@@ -1,23 +1,16 @@
 
 export class Utils {
-  static downloadPdf(data: Blob, fileName: string): void {
-    const novaAba = window.open('', '_blank');
-
+  static openPdf(data: Blob): void {
     const blob = new Blob([data], { type: 'application/pdf' });
-    const url = window.URL.createObjectURL(blob);
-    novaAba!.location.href = url;
+    const url = URL.createObjectURL(blob);
 
-    window.open(url);
-
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${fileName}.pdf`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    const pdfWindow = window.open();
+    if (pdfWindow) {
+      pdfWindow.location.href = url;
+    }
 
     setTimeout(() => {
-      window.URL.revokeObjectURL(url);
-    }, 1000);
+      URL.revokeObjectURL(url);
+    }, 5000);
   }
 }

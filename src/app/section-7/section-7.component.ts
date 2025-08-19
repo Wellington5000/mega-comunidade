@@ -25,12 +25,8 @@ export class Section7Component {
   downloadRegulation(): void {
     this.appService.downloadRegulation('LF').subscribe({
       next: (response: Blob) => {
-        this.downloadPdf(response, 'regulamento-lotofacil-independencia');
+        Utils.openPdf(response);
       }
     })
-  }
-
-  downloadPdf(file: Blob, fileName: string): void {
-    Utils.downloadPdf(file, fileName);
   }
 }
