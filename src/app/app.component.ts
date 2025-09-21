@@ -13,6 +13,7 @@ import { Section8Component } from "./section-8/section-8.component";
 import { Section9Component } from "./section-9/section-9.component";
 import { FooterComponent } from "./footer/footer.component";
 import { CountdownComponent } from "./countdown/countdown.component";
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -38,4 +39,22 @@ import { CountdownComponent } from "./countdown/countdown.component";
 })
 export class AppComponent {
   title = 'mega-comunidade';
+
+  contactLink: string = '';
+
+  constructor(
+    private appService: AppService
+  ) { }
+
+  ngOnInit(): void {
+    this.getContactLink();
+  }
+
+  getContactLink(): void {
+    this.appService.getContactLink().subscribe({
+      next: (response) => {
+        this.contactLink = response?.whatsapp;
+      }
+    })
+  }
 }
