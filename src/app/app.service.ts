@@ -15,4 +15,10 @@ export class AppService {
   getContactLink(): Observable<any> {
     return this.http.get(this.API_URL + 'whatsapp');
   }
+
+  downloadRegulation(lotteryCode: string): Observable<Blob> {
+    return this.http.get(this.API_URL + `promocoes/${lotteryCode}/download-regulamento`, {
+      responseType: 'blob'
+    });
+  }
 }
